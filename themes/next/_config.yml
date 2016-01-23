@@ -171,6 +171,13 @@ baidu_analytics: bebab2a5ea5fe2339f2c538cb6e5df50
 # Duoshuo ShortName
 duoshuo_shortname: caiyuyu
 
+# Google Analytics
+google_analytics: UA-72791691-1
+
+# hexo sitemap网站地图
+sitemap:
+path: sitemap.xml
+
 # Disqus
 #disqus_shortname:
 
@@ -183,14 +190,6 @@ duoshuo_shortname: caiyuyu
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
 #google_site_verification:
-
-
-# Google Analytics
-#google_analytics:
-
-# hexo sitemap网站地图
-sitemap:
-path: sitemap.xml
 
 # Make duoshuo show UA
 # user_id must NOT be null when admin_enable is true!

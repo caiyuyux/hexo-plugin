@@ -10,5 +10,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /img/
 
-Sitemap: http://www.arao.me/sitemap.xml
-Sitemap: http://www.arao.me/baidusitemap.xml
+Sitemap: http://blog.caiyuyu.net/sitemap.xml
+Sitemap: http://blog.caiyuyu.net/baidusitemap.xml
