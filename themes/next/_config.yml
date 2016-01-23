@@ -31,7 +31,7 @@ menu:
   tags: /tags
   archives: /archives
   about: /about
-  #commonweal: /404.html
+  guestbook: /guestbook
 
 
 # Enable/Disable menu icons.
@@ -47,7 +47,7 @@ menu_icons:
   categories: th
   tags: tags
   archives: archive
-  commonweal: heartbeat
+  guestbook: heartbeat
 
 
 
@@ -169,7 +169,7 @@ swiftype_key: 4zuJpK6UJFFWBqDY3LZe
 baidu_analytics: ce8f68e6da1f50265c5ab00f20fc1bbd
 
 # Duoshuo ShortName
-duoshuo_shortname: fTornado
+duoshuo_shortname: caiyuyu
 
 # Disqus
 #disqus_shortname:
@@ -188,6 +188,9 @@ duoshuo_shortname: fTornado
 # Google Analytics
 #google_analytics:
 
+# hexo sitemap网站地图
+sitemap:
+path: sitemap.xml
 
 # Make duoshuo show UA
 # user_id must NOT be null when admin_enable is true!

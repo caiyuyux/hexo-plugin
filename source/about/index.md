@@ -2,6 +2,7 @@
 title: about
 date: 2016-01-22 22:43:48
 type: "about"
+comments: false
 ---
 ### 关于我
 
