@@ -66,7 +66,7 @@ maven是一个项目管理工具，基于Java平台，主要用于项目构建�
 如我们所知，idea的项目的根目录有个.idea的文件夹，myeclipse有.setting文件夹，  
 这些IDE的配置文件肯定不能上传到托管平台的，所以在.gitignore里面要加入  
 
-```Markdown
+```markdown
 # Maven
 target/
 *.ser
@@ -104,7 +104,7 @@ out/
 
 这里我以添加ssh框架支持做个小例子  
 
-```Java
+```java
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
