@@ -11,7 +11,7 @@ tags: clojure
 嗯，废话不多说，教材用的是《Clojure Programming》，也就是俗称的动物书，听说比较全面，打基础不错。
 
 当然，是翻译版的，英语水平不够是硬伤呀。 可以点 [Clojure Programming.pdf](http://leanote.com/api/file/getAttach?fileId=56a72482ab6441777600233a) 下载英文版PDF文档。
-
+- - -
 ### Clojure特点
 1. 基于JVM平台，lisp恶劣的生态圈和稳定的JVM一结合，赶脚是天造地设的一对。
 
@@ -20,7 +20,7 @@ tags: clojure
 3. 天生适合进行并行、并发编程。
 
 4. 动态编程语言，可以交互式开发。
-
+- - -
 ### Clojure的同像性
 同像性一般称为“代码即数据”，即是说clojure没有太多臃肿的代码片段，这也是元编程的前提。  
 
@@ -31,15 +31,16 @@ tags: clojure
 因为clojure的代码是直接用AST的数据结构来写的，就是说，你写下的clojure代码就是一个AST了，不需要特意去转换，
 
 这也意味着clojure拥有其他语言所不能及的优秀的表达能力。
-
+- - -
 ### Clojure跑起来
+
 #### 必备jar包
 
 1. JRE；也就是java运行时，当然，有JDK肯定也是可以的。
 
 2. clojure.jar；可以在官网下载，现在最新的是1.8。
 
-####编程工具
+#### 编程工具
 
 1. Emacs；神器来着，可惜我驾驭不了，号称天生适合开发lisp，不适合新手，套用大牛的话，因为学习曲线太陡峭，除非你是emacs大牛。
 
@@ -48,8 +49,9 @@ tags: clojure
 3. IDEA；没得说，强烈推荐，对clojure的支持很好，不过注意，不用La Clojure插件，用cursive插件，同时支持Leiningen，可惜要付费，不过真的很值，可以试用看看先。
 
 4. 命令行；这个不太熟悉，之前很久搞过，好像是要用lein运行的，不过用命令行，想想都觉得累，大牛走开、走开。
-
+- - -
 ### REPL是什么鬼
+
 #### 简单介绍
 
 即 Read(读入)-Eval(求值)-Print(打印)-Loop(循环)。
@@ -69,20 +71,20 @@ clojure有repl肯定是个不小的有点，因为这意味着clojure可以交�
 这个clojure是有命名空间的概念，user表示你当前的命名空间，user是默认命名空间。
 
 我们定义一个函数average，可以传入一个数组求平均值。
-```
+```clojure
 (defn average    
     [numbers]
     (/ (apply + numbers) (count numbers)
 ```
 然后调用代码得到结果
-```
+```clojure
 (average [60 80 100 400]
 ;=160
 ```
 注意 `;= `  前缀表示函数结果输出，在函数式语言中，函数是头等公民，都具有一个返回值，160就是average的返回值，也就是我们要求的平均值结果。
 
 如果换成这样就变成这样
-```
+```clojure
 (println (average [60 80 100 499]))
 ;160
 ;=nil
