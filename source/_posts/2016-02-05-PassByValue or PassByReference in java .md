@@ -1,0 +1,115 @@
+---
+title: "Java中传值和传引用"
+date: 2016-02-05 22:41:10
+tags: java
+categories: 基础知识
+---
+老虎老鼠，傻傻分不清楚。
+<!--more-->
+传值和传引用的概念在C++的时候确实是个问题，什么指针什么引用搞得很头疼；  
+Java还好，没有指针了。
+Java的数据类型如下，先看下。
+![down](/img/pics/2016-02-05/2011100711181651.jpg)  
+
+### 基础数据类型是传值
+这个没什么可说的，看例子。
+```java
+public class Test {
+    public static void test(int a) {
+        a = 2;
+        System.out.println("in Test function: a = "+a);
+    }
+    public static void main(String[] args) {
+        int a = 1;
+        System.out.println("before Test function: a = "+a);
+        test(a);
+        System.out.println("after Test function: a = "+a);
+    }
+}
+//before Test function: a = 1
+//in Test function: a = 2
+//after Test function: a = 1
+```
+如果是基础数据类型，你就放心的把值交给函数了，肯定不会改变原值的。
+
+### 引用数据类型是传引用
+一般大家会觉得，有俩种情况嘛，*传值不改变原值，传引用会改变*，唔，这句话不完全正确，  
+应该说 *传值一定不改变原值，传引用可能会改变*，先看一下会改变的情况。
+```java
+public class Test2 {
+    public static void test(StringBuffer str) {
+        str.append(" world");
+        System.out.println("in Test2 function: str = " + str);
+    }
+    public static void main(String[] args) {
+        StringBuffer  str = new StringBuffer("hello");
+        System.out.println("before Test2 function: str = "+str);
+        test(str);
+        System.out.println("after Test2 function: str = "+str);
+    }
+}
+//before Test2 function: str = hello
+//in Test2 function: str = hello world
+//after Test2 function: str = hello world
+
+```
+
+接着看下不变的情况。
+```java
+public class Test2 {
+    public static void test(StringBuffer str) {
+        str = new StringBuffer("world");
+        System.out.println("in Test2 function: str = " + str);
+    }
+    public static void main(String[] args) {
+        StringBuffer  str = new StringBuffer("hello");
+        System.out.println("before Test2 function: str = "+str);
+        test(str);
+        System.out.println("after Test2 function: str = "+str);
+    }
+}
+//before Test2 function: str = hello
+//in Test2 function: str = world
+//after Test2 function: str = hello
+```
+
+怎么样，如果你可以理解这俩种情况的区别，那就证明你对java中引用的概念理解得不错； 
+简单解释下，我们一直在说透过现象看本质，所谓引用，就是要你看准最本质的东西，也就是最底层的不变的值。
+在main函数中，str引用一个对象，这个对象是有实例化的，存在于内存中的；  
+调用test函数时，传入引用，内存不会有任何变化，对象还是那个对象，test函数中的str其实不一定是str，你可以是string或者是s都可以，但是这个符号所指向的内存地址是和main函数中的str是一样的，这就是引用。  
+第一个例子中，在test函数中调用了append方法，操作的就是我们内存中由main函数实例化的那个对象，所以调用test函数值会变化。  
+第二个例子中，实际上是什么呢，是再实例化一个新的对象，然后让原先引用旧对象的str重新指向新的对象，既然没有对原先对象做任何操作，调用test函数后值自然不会变化。  
+
+其实到了这里你基本上不用往下看，就是这个理，一通百通，不过还是有些人对以下情况会疑惑，  
+
+java的string类型有点特别，字符串池什么的我就不说了，结论就是string类型的值不可变，  
+虽然是传引用，但是它传引用和传值没什么区别，它不像StringBuffer有个append方法，  
+把一个string引用给你，你最多也只能重新引用一个新的字符串，不能改变原先的，上例子。  
+```java
+public class Test3 {
+    public static void test(String str) {
+        str = "hello world";
+        System.out.println("in Test3 function: str = " + str);
+    }
+    public static void main(String[] args) {
+        String  str = "hello";
+        System.out.println("before Test3 function: str = "+str);
+        test(str);
+        System.out.println("after Test3 function: str = "+str);
+    }
+}
+```
+
+与string类似，java的基础数据类型的包装类的数据也是不可变的，  
+类中没有提供方法调用，而且属性用final写死了，你想变也没辙。  
+
+ *基本数据类型* | *包装类*
+ ---------------|-----------
+ byte           | Byte
+ boolean        | Boolean
+ short          | Short
+ char           | Character 
+ int            | Integer
+ long           | Long
+ float          | Float
+ double         | Double
