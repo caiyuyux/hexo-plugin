@@ -1,6 +1,6 @@
 ---
-title:  "IDEA 下的 maven+git 开发"
-date:   2016-01-20 12:23:11
+title: "[技术备忘]IDEA 下的 maven+git 开发"
+date: 2016-01-20 12:23:11
 categories: 技术备忘
 tags: [IDEA, maven, git]
 ---
