@@ -46,4 +46,5 @@ $(document).ready(function () {
   CONFIG.motion && NexT.motion.integrator.bootstrap();
 
   $(document).trigger('bootstrap:after');
+
 });

@@ -154,4 +154,5 @@ NexT.utils = NexT.$u = {
   isPisces: function () {
     return CONFIG.scheme === 'Pisces';
   }
+
 };
