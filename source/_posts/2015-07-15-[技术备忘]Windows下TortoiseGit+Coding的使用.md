@@ -1,5 +1,5 @@
 ---
-title: "[技术备忘]Windows下 TortoiseGit+Coding 的使用"
+title: Windows下 TortoiseGit+Coding 的使用
 date: 2015-07-15 22:06:36
 categories: 技术备忘
 tags: git

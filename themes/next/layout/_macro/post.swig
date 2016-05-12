@@ -37,10 +37,14 @@
                   </span>
                 {% endif %}
                 <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">
-                  {{ post.title | default(__('post.untitled'))}}
+                  {% for cat in post.categories %}
+                    [{{ cat.name }}]{{ post.title }}
+                  {% endfor %}
                 </a>
               {% else %}
-                {{ post.title }}
+                {% for cat in post.categories %}
+                    [{{ cat.name }}]{{ post.title }}
+                  {% endfor %}
               {% endif %}
             {% endif %}
           </h1>
@@ -114,6 +118,13 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           {% endif %}
+
+          {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.page_pv %}
+              &nbsp; | &nbsp;
+              <span class="page-pv">{{ theme.busuanzi_count.page_pv_header }}
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>{{ theme.busuanzi_count.page_pv_footer }}
+              </span>
+          {% endif %}
         </div>
       </header>
     {% endif %}
@@ -151,7 +162,6 @@
         {% elif post.excerpt  %}
           {{ post.excerpt }}
           <div class="post-more-link text-center">
-            <!--<a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">-->
             <a class="btn" href="{{ url_for(post.path) }}" rel="contents">
               {{ __('post.read_more') }} &raquo;
             </a>
@@ -176,6 +186,18 @@
       {% else %}
         {{ post.content }}
       {% endif  %}
+    </div>
+
+    <div>
+      {% if not is_index %}
+        {% include 'wechat-subscriber.swig' %}
+      {% endif %}
+    </div>
+
+    <div>
+      {% if not is_index %}
+        {% include 'reward.swig' %}
+      {% endif %}
     </div>
 
     <footer class="post-footer">

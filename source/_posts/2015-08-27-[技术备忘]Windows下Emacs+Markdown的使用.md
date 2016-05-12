@@ -1,5 +1,5 @@
 ---
-title: "[技术备忘]Windows下 Emacs+Markdown 的使用"
+title: Windows下 Emacs+Markdown 的使用
 date: 2015-08-29 13:23:22
 categories: 技术备忘
 tags: [emacs, Markdown]

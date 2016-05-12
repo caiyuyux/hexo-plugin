@@ -1,5 +1,5 @@
 ---
-title: 关于
+title: "关于"
 date: 2016-01-22 22:43:48
 type: "about"
 comments: false

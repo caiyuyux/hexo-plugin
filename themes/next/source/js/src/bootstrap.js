@@ -6,14 +6,9 @@ $(document).ready(function () {
 
   NexT.utils.isMobile() && window.FastClick.attach(document.body);
 
-  $('#posts').find('img').lazyload({
-    placeholder: '/images/loading.gif',
-    effect: 'fadeIn'
-  });
+  NexT.utils.lazyLoadPostsImages();
 
-  $('.back-to-top').on('click', function () {
-    $('body').velocity('scroll');
-  });
+  NexT.utils.registerBackToTop();
 
   $('.site-nav-toggle button').on('click', function () {
     var $siteNav = $('.site-nav');
@@ -46,5 +41,4 @@ $(document).ready(function () {
   CONFIG.motion && NexT.motion.integrator.bootstrap();
 
   $(document).trigger('bootstrap:after');
-
 });

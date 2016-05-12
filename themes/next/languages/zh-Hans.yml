@@ -12,8 +12,8 @@ menu:
   tags: 标签
   about: 关于
   search: 搜索
-  guestbook: 留言
-  commonweal: 公益404
+  guestbooks: 留言
+  # commonweal: 公益404
 
 
 sidebar:
@@ -34,6 +34,8 @@ page:
   tags: 标签
 
 footer:
+  # powered: "由 %s 强力驱动"
+  # theme: 主题
   powered: "Powered by %s"
   theme: Theme
 

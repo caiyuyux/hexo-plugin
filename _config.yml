@@ -1,9 +1,9 @@
 # Hexo Configuration
-## Docs: http://hexo.io/docs/configuration.html
+## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title:    Tornado' blog     
+title: Tornado' blog
 subtitle: 蘑菇不开花，你还爱它吗？
 description: 欣欣以向荣 萋萋而摇绿
 author: Tornado
@@ -61,13 +61,11 @@ per_page: 15
 pagination_dir: page
 
 # Extensions
-## Plugins: http://hexo.io/plugins/
-## Themes: http://hexo.io/themes/
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
 theme: next
 
 # Deployment
-## Docs: http://hexo.io/docs/deployment.html
+## Docs: https://hexo.io/docs/deployment.html
 deploy:
- type: git
- repo: https://github.com/yinyizhixian/Tornado-Hexo-Blog.git
- branch: gh-pages
+  type:

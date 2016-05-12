@@ -1,5 +1,5 @@
 ---
-title: "[技术备忘]Ajax实现bootstrap-paginator的分页"
+title: Ajax实现bootstrap-paginator的分页
 date: 2016-04-22 18:41:20
 categories: 技术备忘
 tags: [bootstrap, ajax, paginator]
