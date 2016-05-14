@@ -1,6 +1,6 @@
 ---
 title: Windows下 TortoiseGit+Coding 的使用
-date: 2015-07-15 22:06:36
+date: 2015-07-15
 categories: 技术备忘
 tags: git
 ---

@@ -1,6 +1,6 @@
 ---
 title: Windows下 Emacs+Markdown 的使用
-date: 2015-08-29 13:23:22
+date: 2015-08-29
 categories: 技术备忘
 tags: [emacs, Markdown]
 ---

@@ -1,5 +1,5 @@
 ---
-title: "留言"
+title: 留言
 date: 2016-01-23 20:16:12
 type: "guestbooks"
 ---
