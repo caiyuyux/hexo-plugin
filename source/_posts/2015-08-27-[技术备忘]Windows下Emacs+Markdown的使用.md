@@ -23,11 +23,11 @@ emacs竟然不能预览markdown，不可能，还有什么是没万能的emacs�
 
 ### 使用python的markdown包
 
-####搭建python环境
+#### 搭建python环境
 下载python ([https://www.python.org](https://www.python.org))
 然后安装，这个简单，就不用我说了，无脑操作。
 
-####下载Markdown包并安装
+#### 下载Markdown包并安装
 打开`cmd`，输入如下，会自行下载安装，python的环境变量如果没有设置要先设置好。
 
 >pip install markdown
@@ -44,7 +44,7 @@ emacs竟然不能预览markdown，不可能，还有什么是没万能的emacs�
 又是一大堆信息出来，个人觉得python这点很好，可以让我们很清楚的知道产生了那些文件。
 我们可以看到在`Scripts`文件夹下产生了一个名为`markdown_py`的批处理文件。
 
-####修改markdown-mode.el
+#### 修改markdown-mode.el
 我们生成的批处理文件名是`markdown_py`，但是`markdown-mode.el`里面默认的指令名是`markdown`,所以需要修改下。
 
 打开`markdown-mode.el`文件，在800多行左右可以看到如下
@@ -69,9 +69,9 @@ emacs竟然不能预览markdown，不可能，还有什么是没万能的emacs�
 
 不过确实，在md文件加上这一句确实不太美观，所以我推荐第二种方法，更好更强大。
 
-###使用pandoc工具
+### 使用pandoc工具
 
-####下载pandoc并安装
+#### 下载pandoc并安装
 下载pandoc ([http://www.pandoc.org](http://www.pandoc.org))，选择windows版本，然后安装。
 
 pandoc可以解析markdown文件，但是它并不仅仅支持markdown的标记语法，还支持语法高亮和LaTex数学公式，可以把它当作markdown的拓展。
@@ -80,7 +80,7 @@ pandoc可以解析markdown文件，但是它并不仅仅支持markdown的标记�
 
 ![pandoc](/img/pics/2015-08-29/pandoc.png)
 
-####修改markdown-mode.el
+#### 修改markdown-mode.el
 安装完pandoc后，环境变量会多出一个`pandoc`的指令，
 
 打开`markdown-mode.el`，还是刚才那个位置
@@ -89,12 +89,13 @@ pandoc可以解析markdown文件，但是它并不仅仅支持markdown的标记�
 
 `pandoc`的命令选项如下
 
-||选项||描述|||
-||`-f html`||转换成html文件||
-||`-t markdown`||解析markdown||
-||`--ascii`||解决中文乱码||
-||`--highlight-style pygments`||支持语法高亮||
-||`--mathjax`||支持 LaTex数学公式||
+| 选项                       | 描述             |
+| ---------------------------|------------------|
+|`-f html`                   |转换成html文件    |
+|`-t markdown`               |解析markdown      |
+|`--ascii`                   |解决中文乱码      |
+|`--highlight-style pygments`|支持语法高亮      |
+|`--mathjax`                 |支持 LaTex数学公式|
 
 一股脑都加进去吧，将`markdown`修改为如下
 

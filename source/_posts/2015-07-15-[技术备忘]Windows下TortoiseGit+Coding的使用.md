@@ -31,7 +31,7 @@ git的就多了,基本上有名的托管平台都是支持的。
 #### 下载[git for windows](http://git-scm.com/download/)
 进入git的官网,选择windows版本下载，
 
-![git](/img/pics/2015-07-15/gitdown.png)
+![git](/img/pics/2015-07-15/gitDown.png)
 
 ![git](/img/pics/2015-07-15/gitDown2.png)
 

@@ -9,7 +9,7 @@
     {% set post_class = post_class + ' ' + 'post-sticky' %}
   {% endif %}
 
-  <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article">
+  <article class="{{ post_class }}" itemscope itemtype="//schema.org/Article">
 
     {% if not headlessPost %}
       <header class="post-header">
@@ -37,14 +37,10 @@
                   </span>
                 {% endif %}
                 <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">
-                  {% for cat in post.categories %}
-                    [{{ cat.name }}]{{ post.title }}
-                  {% endfor %}
+                  {{ post.title | default(__('post.untitled'))}}
                 </a>
               {% else %}
-                {% for cat in post.categories %}
-                    [{{ cat.name }}]{{ post.title }}
-                  {% endfor %}
+                {{ post.title }}
               {% endif %}
             {% endif %}
           </h1>
@@ -92,6 +88,13 @@
                   <span class="post-comments-count ds-thread-count" data-thread-key="{{ post.path }}" itemprop="commentsCount"></span>
                 </a>
               </span>
+            {% elseif theme.facebook_comments_plugin.enable %}
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="{{ post.permalink }}" itemprop="commentsCount">0</span> comments
+                </a>
+              </span>
             {% elseif theme.disqus_shortname %}
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
@@ -134,13 +137,13 @@
 
       {# Gallery support #}
       {% if post.photos and post.photos.length %}
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+        <div class="post-gallery" itemscope itemtype="//schema.org/ImageGallery">
           {% set COLUMN_NUMBER = 3 %}
           {% for photo in post.photos %}
             {% if loop.index0 % COLUMN_NUMBER === 0 %}<div class="post-gallery-row">{% endif %}
               <a class="post-gallery-img fancybox"
                  href="{{ url_for(photo) }}" rel="gallery_{{ post._id }}"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                 itemscope itemtype="//schema.org/ImageObject" itemprop="url">
                 <img src="{{ url_for(photo) }}" itemprop="contentUrl"/>
               </a>
             {% if loop.index0 % COLUMN_NUMBER === 2 %}</div>{% endif %}
@@ -162,7 +165,7 @@
         {% elif post.excerpt  %}
           {{ post.excerpt }}
           <div class="post-more-link text-center">
-            <a class="btn" href="{{ url_for(post.path) }}" rel="contents">
+            <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
               {{ __('post.read_more') }} &raquo;
             </a>
           </div>

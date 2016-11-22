@@ -1,6 +1,6 @@
 {% macro render(post) %}
 
-  <article class="post post-type-{{ post.type | default('normal') }}" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-{{ post.type | default('normal') }}" itemscope itemtype="//schema.org/Article">
     <header class="post-header">
 
       <h1 class="post-title">
@@ -14,11 +14,7 @@
               {% if post.type === 'picture' %}
                 {{ post.content }}
               {% else %}
-                <span itemprop="name">
-                  {% for cat in post.categories %}
-                    [{{ cat.name }}]{{ post.title }}
-                  {% endfor %}
-                </span>
+                <span itemprop="name">{{ post.title | default(__('post.untitled')) }}</span>
               {% endif %}
             </a>
         {% endif %}
